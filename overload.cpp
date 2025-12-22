@@ -11,9 +11,16 @@ void fun(const int &a){
     //这里的const防止在使用过程中函数里对变量进行更改
     cout<<"func(const int &a)调用"<<endl;
 }
+void func2(int a){
+    cout<<"func2(int a)的调用"<<endl;
+}
+void func2(int a, int b=10){
+    cout<<"func2(int a,int b)的调用"<<endl;
+}
 int main(){
     int a =10;
     fun(a);
     fun(10);
+    // fun2(10); 这时候  如果赋值给后一个,可以用 前一个也可以用, 所以有二义性
     system("pause");
 }
