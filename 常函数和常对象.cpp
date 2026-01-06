@@ -12,10 +12,14 @@ class Person{
         // m_A = 100;  //等同于 this->m_A = 100;
         m_B=100;
      }
+     void func(){};
      int m_A;
      mutable int m_B;
 };
 int main() {
-    Person p;
+    const Person p;
+    p.m_B=100;
+    p.showPerson();
+    p.func(); //常函数只能调用常函数,不能调用普通函数
     return 0;
 }
